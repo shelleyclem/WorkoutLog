@@ -58,9 +58,9 @@ router.get('/log', async (req, res) => {
 =====================
 
 */
-router.get('/log/:id', async (req, res) => {
-    
-})
+// router.get('/log/:id', async (req, res) => {
+
+// })
 /*
 
 =====================
@@ -74,7 +74,7 @@ router.put('/log/:id', validateJWT, async (req, res) => {
     const logID = req.params.id;
     const userId = req.user.id;
 
-    const query - {
+    const query = {
         where: {
             id: logID,
             owner: userId
@@ -89,7 +89,7 @@ router.put('/log/:id', validateJWT, async (req, res) => {
 
     try {
         const update = await LogModel.update(updatedLog, query);
-        res.status(200).json(update;)
+        res.status(200).json(update);
     } catch (err) {
         res.status(500).json({err: err});
     }
